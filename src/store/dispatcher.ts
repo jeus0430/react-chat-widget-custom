@@ -4,16 +4,16 @@ import store from '.';
 import * as actions from './actions';
 import { LinkParams, ImageState } from './types';
 
-export function addUserMessage(text: string, name?: string, id?: string) {
-  store.dispatch(actions.addUserMessage(text, name, id));
+export function addUserMessage(text: string, name?: string, mins?: number, id?: string) {
+  store.dispatch(actions.addUserMessage(text, name, mins, id));
 }
 
-export function addResponseMessage(text: string, name?: string, id?: string) {
-  store.dispatch(actions.addResponseMessage(text, name, id));
+export function addResponseMessage(text: string, name?: string, mins?: number, id?: string) {
+  store.dispatch(actions.addResponseMessage(text, name, mins, id));
 }
 
-export function addLinkSnippet(link: LinkParams, name?: string, id?: string) {
-  store.dispatch(actions.addLinkSnippet(link, name, id));
+export function addLinkSnippet(link: LinkParams, name?: string, mins?: number, id?: string) {
+  store.dispatch(actions.addLinkSnippet(link, name, mins, id));
 }
 
 export function toggleMsgLoader() {

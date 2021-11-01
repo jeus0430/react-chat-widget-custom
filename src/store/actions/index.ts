@@ -15,20 +15,22 @@ export function toggleInputDisabled(): actionsTypes.ToggleInputDisabled {
   };
 }
 
-export function addUserMessage(text: string, name?: string, id?: string): actionsTypes.AddUserMessage {
+export function addUserMessage(text: string, name?: string, mins?: number, id?: string): actionsTypes.AddUserMessage {
   return {
     type: actionsTypes.ADD_NEW_USER_MESSAGE,
     text,
     name,
+    mins,
     id
   };
 }
 
-export function addResponseMessage(text: string, name?: string, id?: string): actionsTypes.AddResponseMessage {
+export function addResponseMessage(text: string, name?: string, mins?: number, id?: string): actionsTypes.AddResponseMessage {
   return {
     type: actionsTypes.ADD_NEW_RESPONSE_MESSAGE,
     text,
     name,
+    mins,
     id
   };
 }
@@ -39,11 +41,12 @@ export function toggleMsgLoader(): actionsTypes.ToggleMsgLoader {
   }
 }
 
-export function addLinkSnippet(link: LinkParams, name?: string, id?: string): actionsTypes.AddLinkSnippet {
+export function addLinkSnippet(link: LinkParams, name?: string, mins?: number, id?: string): actionsTypes.AddLinkSnippet {
   return {
     type: actionsTypes.ADD_NEW_LINK_SNIPPET,
     link,
     name,
+    mins,
     id
   };
 }

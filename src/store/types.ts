@@ -14,6 +14,7 @@ type BaseMessage = {
 export interface Message extends BaseMessage {
   text: string;
   userName?: string;
+  mins?: number;
 };
 
 export type QuickButton = {
@@ -27,6 +28,7 @@ export interface Link extends BaseMessage {
   link: string;
   target: string;
   userName?: string;
+  mins?: number,
 };
 
 export interface LinkParams {

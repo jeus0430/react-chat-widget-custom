@@ -8,13 +8,16 @@ import QuickButton from '../components/Widget/components/Conversation/components
 
 import { MESSAGES_TYPES, MESSAGE_SENDER, MESSAGE_BOX_SCROLL_DURATION } from '../constants';
 
-export function createNewMessage(text: string, sender: string, name?: string, id?: string): MessageI {
+export function createNewMessage(text: string, sender: string, name?: string, mins?: number, id?: string): MessageI {
+  var timestamp = new Date()
+  if (mins)
+    timestamp.setMinutes( timestamp.getMinutes() - mins );
   return {
     type: MESSAGES_TYPES.TEXT,
     component: Message,
     text,
     sender,
-    timestamp: new Date(),
+    timestamp: timestamp,
     showAvatar: sender === MESSAGE_SENDER.RESPONSE,
     customId: id,
     userName: name,
@@ -22,7 +25,10 @@ export function createNewMessage(text: string, sender: string, name?: string, id
   };
 }
 
-export function createLinkSnippet(link: LinkParams, name?: string, id?: string) : Link {
+export function createLinkSnippet(link: LinkParams, name?: string, mins?: number, id?: string) : Link {
+  var timestamp = new Date()
+  if (mins)
+    timestamp.setMinutes( timestamp.getMinutes() - mins );
   return {
     type: MESSAGES_TYPES.SNIPPET.LINK,
     component: Snippet,
@@ -30,7 +36,7 @@ export function createLinkSnippet(link: LinkParams, name?: string, id?: string) 
     link: link.link,
     target: link.target || '_blank',
     sender: MESSAGE_SENDER.RESPONSE,
-    timestamp: new Date(),
+    timestamp: timestamp,
     showAvatar: true,
     customId: id,
     userName: name,

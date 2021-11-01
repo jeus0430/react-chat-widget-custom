@@ -30,6 +30,7 @@ export interface AddUserMessage {
   type: typeof ADD_NEW_USER_MESSAGE;
   text: string;
   name?: string;
+  mins?: number;
   id?: string;
 }
 
@@ -37,6 +38,7 @@ export interface AddResponseMessage {
   type: typeof ADD_NEW_RESPONSE_MESSAGE;
   text: string;
   name?: string;
+  mins?: number;
   id?: string;
 }
 
@@ -48,6 +50,7 @@ export interface AddLinkSnippet {
   type: typeof ADD_NEW_LINK_SNIPPET;
   link: LinkParams;
   name?: string;
+  mins?: number;
   id?: string;
 }
 

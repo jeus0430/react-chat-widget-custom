@@ -8,15 +8,18 @@ declare const Widget: ElementType;
 
 export function addUserMessage(text: string): void;
 export function addUserMessage(text: string, name: string, ): void;
-export function addUserMessage(text: string, name: string, id: string): void;
+export function addUserMessage(text: string, name: string, mins: number): void;
+export function addUserMessage(text: string, name: string, mins: number, id: string): void;
 
 export function addResponseMessage(text: string): void;
 export function addResponseMessage(text: string, name: string): void;
-export function addResponseMessage(text: string, name: string, id: string): void;
+export function addResponseMessage(text: string, name: string, mins: number): void;
+export function addResponseMessage(text: string, name: string, mins: number, id: string): void;
 
 export function addLinkSnippet(link: { link: string, title: string, target?: string }): void;
 export function addLinkSnippet(link: { link: string, title: string, target?: string }, name: string,): void;
-export function addLinkSnippet(link: { link: string, title: string, target?: string }, name: string, id: string): void;
+export function addLinkSnippet(link: { link: string, title: string, target?: string }, name: string, mins: number,): void;
+export function addLinkSnippet(link: { link: string, title: string, target?: string }, name: string, mins: number, id: string): void;
 
 export function renderCustomComponent(component: ElementType, props: any): void;
 export function renderCustomComponent(component: ElementType, props: any, showAvatar: boolean): void;

@@ -14,10 +14,11 @@ import {
 export default class App extends Component {
   componentDidMount() {
     addResponseMessage("Welcome to this awesome chat!")
-    addLinkSnippet({ link: "https://google.com", title: "Google" })
+    addLinkSnippet({ link: "https://google.com", title: "Google" }, "cai" , 3)
     addResponseMessage(
       "![](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)",
-      "Vaishali2"
+      "Vaishali2",
+      3
     )
     addResponseMessage(
       "![vertical](https://d2sofvawe08yqg.cloudfront.net/reintroducing-react/hero2x?1556470143)",
@@ -48,10 +49,8 @@ export default class App extends Component {
   }
 
   handleSubmit = (msgText: string) => {
-    if (msgText.length < 10)
-      addUserMessage("Uh oh, please write a bit more.")
-    else
-      addUserMessage(msgText, "Me")
+    if (msgText.length < 10) addUserMessage("Uh oh, please write a bit more.")
+    else addUserMessage(msgText, "Me", 10)
     return false
     // return true
   }
